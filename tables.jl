@@ -13,23 +13,28 @@ try
     #     end
     # end
     # t = tables(20)
-    # open("tables_1_to_11.txt","w") do io
-    #     writedlm(io,[t],',')
-    # end;
-    for r in 1:20
-        for c in 1:10
-            print(c*number,",")
-        end
-        println()
-    end
-
+    
+    # number = 5
+    # for r in 1:20
+    #     for c in 1:10
+    #         print(c*number,",")
+    #     end
+    #     println()
+    # end
     for features in 1:10
         for variables in 1:10
             print(features*variables,',')
         end
         println()
     end
-
+    print("demo")
 catch
     table = DataFrame(one=1:10,two=(1:10)*2,three=(1:10)*3,four=(1:10)*4,five=(1:10)*5,six=(1:10)*6,seven=(1:10)*7,eight=(1:10)*8,nine=(1:10)*9,ten=(1:10)*10,eleven=(1:10)*11)
+end
+try
+    open("tables_1_to_11.txt","w") do io
+        writedlm(io,[t],',')
+    end;
+finally
+    close("tables_1_to_11.txt")
 end
